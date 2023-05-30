@@ -28,12 +28,13 @@ public class IInventorySlot : MonoBehaviour, IDropHandler
     public void UpdateIInventorySlot(ShopItemSO item)
     {
         currentItem = item;
-
-        // Update the UI elements with the item information
         iconImage.sprite = item.icon;
         titleTxt.text = item.title;
         descriptionTxt.text = item.description;
-        quantityTxt.text = "x1";// Assuming quantity is always 1, customize this based on your requirements
+        quantityTxt.text = "x1";
+
+        Debug.Log("Updating inventory slot: " + item.title);
     }
+
 
 }

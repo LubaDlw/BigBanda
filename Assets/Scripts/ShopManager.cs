@@ -129,6 +129,7 @@ public class ShopManager : MonoBehaviour
 
         // remove
 
+        Destroy(GridBackPack.transform.GetChild(itemIndex).gameObject);
         backpackItems.RemoveAt(itemIndex);
         Debug.Log("Sold item: " + item.title);
 

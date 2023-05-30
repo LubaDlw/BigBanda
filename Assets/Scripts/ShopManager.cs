@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine;
+using System;
 
 public class ShopManager : MonoBehaviour
 {
@@ -64,6 +65,28 @@ public class ShopManager : MonoBehaviour
             nextItemIncrementTime = Time.time + itemIncrementDelay;
         }
             */
+    }
+
+
+    public void FilterShopItems(string filter)
+    {
+        List<ShopItemSO> filteredItems = new List<ShopItemSO>();
+
+        foreach (ShopItemSO item in shopItemsSO)
+        {
+            if (item.description == filter)
+            {
+                filteredItems.Add(item);
+            }
+        
+
+    }
+        LoadPanels(filteredItems.ToArray());
+    }
+
+    private void LoadPanels(ShopItemSO[] shopItemSOs)
+    {
+        throw new NotImplementedException();
     }
 
     public void AddCoins()
@@ -129,10 +152,11 @@ public class ShopManager : MonoBehaviour
 
         // remove
 
-        Destroy(GridBackPack.transform.GetChild(itemIndex).gameObject);
+       Destroy(GridBackPack.transform.GetChild(itemIndex).gameObject);
         backpackItems.RemoveAt(itemIndex);
-        Debug.Log("Sold item: " + item.title);
 
+
+        
 
     }
 
@@ -149,7 +173,11 @@ public class ShopManager : MonoBehaviour
 
             shopPanels[i].sellButton.onClick.AddListener(() => SellItemFromBackpack(i));
 
-
+           /* for (int i = 0; i < items.Length; i++)
+            {
+               
+            }
+           */
         }
     }
 

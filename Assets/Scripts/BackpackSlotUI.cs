@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using static ShopInventory;
-using static UnityEditor.Progress;
+//using static UnityEditor.Progress;
 
 
 public class BackpackSlotUI : MonoBehaviour

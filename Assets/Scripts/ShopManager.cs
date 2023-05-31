@@ -152,7 +152,7 @@ public class ShopManager : MonoBehaviour
 
         // remove
 
-       Destroy(GridBackPack.transform.GetChild(itemIndex).gameObject);
+       GridBackPack.transform.GetChild(itemIndex).gameObject.SetActive(false);
         backpackItems.RemoveAt(itemIndex);
 
 
